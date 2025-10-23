@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="hero">
+    <div class="video">
+      <div class="video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Pp1y9nfhcmo?si=OXjXQUDMFog4IB7I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <mat-card class="cta">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200" alt="Bienestar" class="banner"/>
+      <div class="cta-content">
+        <h3>Círculo de Bienestar | Ananda</h3>
+        <p class="subtitle">Descubre tu mejor versión: reduce el estrés, mejora tu bienestar y cambia tu mentalidad con técnicas efectivas.</p>
+        <div class="stats">
+          <div>
+            <strong>{{ stats().members }}</strong>
+            <span>Members</span>
+          </div>
+          <div>
+            <strong>{{ stats().online }}</strong>
+            <span>Online</span>
+          </div>
+          <div>
+            <strong>{{ stats().admins }}</strong>
+            <span>Admin</span>
+          </div>
+        </div>
+        <button mat-raised-button color="primary" class="join" (click)="onJoin()">
+          JOIN {{ priceLabel() }}
+        </button>
+        <small class="guarantee">Garantía de devolución de 7 días.</small>
+      </div>
+    </mat-card>
+  </div>
+
+  <mat-card class="about">
+    <mat-card-content>
+      <h3>
+        Soy <span class="name">Lauren</span>, una apasionada del crecimiento personal y el camino de bienestar.
+        En este Círculo de Bienestar comparto herramientas probadas que transformaron mi vida.
+      </h3>
+      <ul class="bullets">
+        <li *ngFor="let b of bullets">
+          <mat-icon>{{ b.icon }}</mat-icon>
+          <div>
+            <strong>{{ b.title }}</strong>
+            <p>{{ b.text }}</p>
+          </div>
+        </li>
+      </ul>
+      <p>
+        Tu transformación empieza con una decisión. Únete ahora por {{ priceLabel() }}.
+        Acceso inmediato a herramientas, cursos y comunidad de apoyo.
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
